@@ -8,7 +8,11 @@ func (receiver *Type) MapStringInterface() map[string]interface{} {
 	var value map[string]interface{}
 
 	receiver.lease(func(){
-		value = copymap(receiver.value)
+		if !receiver.loaded {
+			value = nil
+		} else {
+			value = copymap(receiver.value)
+		}
 	})
 
 	return value

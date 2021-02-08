@@ -12,7 +12,11 @@ func (receiver *Type) GoString() string {
 	var result string
 
 	receiver.lease(func(){
-		result = fmt.Sprintf("cel_payload.Something(%#v)", receiver.value)
+		if !receiver.loaded {
+			result = "cel_payload.Nothing()"
+		} else {
+			result = fmt.Sprintf("cel_payload.Something(%#v)", receiver.value)
+		}
 	})
 
 	return result

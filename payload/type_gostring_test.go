@@ -16,14 +16,14 @@ func TestType_GoString(t *testing.T) {
 	}{
 		{
 			Datum: cel_payload.Type{},
-			Expected: "cel_payload.Something(map[string]interface {}(nil))",
+			Expected: "cel_payload.Nothing()",
 		},
 
 
 
 		{
 			Datum: cel_payload.Nothing(),
-			Expected: "cel_payload.Something(map[string]interface {}(nil))",
+			Expected: "cel_payload.Nothing()",
 		},
 
 
