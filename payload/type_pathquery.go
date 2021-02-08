@@ -2,8 +2,6 @@ package cel_payload
 
 import (
 	"github.com/reiver/go-mapstringinterface"
-
-	"sync"
 )
 
 func (receiver *Type) PathQuery(query ...string) (interface{}, bool) {

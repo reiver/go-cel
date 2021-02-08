@@ -1,8 +1,6 @@
 package cel_payload
 
 import (
-	"github.com/reiver/go-mapstringinterface"
-
 	"sync"
 )
 
