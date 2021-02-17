@@ -36,6 +36,7 @@ func (receiver Type) MarshalJSON() ([]byte, error) {
 	}
 
 	var src map[string]interface{} = map[string]interface{}{
+		"magic"   : "CEL/1",
 		"version" : version,
 		"kind"    : kind,
 		"name"    : name,

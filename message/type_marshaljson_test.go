@@ -18,6 +18,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Command("4", "SEND", nil),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -27,6 +28,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Command("4", "SEND", map[string]interface{}{}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -36,6 +38,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Command("4", "SEND", map[string]interface{}{"ONE":"apple","TWO":"banana","THREE":"cherry"}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -52,6 +55,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Log("5", "TOTALS", nil),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -61,6 +65,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Log("5", "TOTALS", map[string]interface{}{}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -70,6 +75,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Log("5", "TOTALS", map[string]interface{}{"ONE":"apple","TWO":"banana","THREE":"cherry"}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -86,6 +92,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Event("123", "ACTIVATED", nil),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
@@ -95,6 +102,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Event("123", "ACTIVATED", map[string]interface{}{}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
@@ -104,6 +112,7 @@ func TestType_MarshalJSON(t *testing.T) {
 		{
 			Message: cel_message.Event("123", "ACTIVATED", map[string]interface{}{"ONE":"apple","TWO":"banana","THREE":"cherry"}),
 			Expected: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
