@@ -56,6 +56,26 @@ func (receiver *Type) UnmarshalJSON(data []byte) error {
 	}
 
 	{
+		const key = "magic"
+
+		valueInterface, found := dst[key]
+		if !found {
+			return fmt.Errorf("could not unmarshal json data: missing ‘%s’", key)
+		}
+
+		value, casted := valueInterface.(string)
+		if !casted {
+			return fmt.Errorf("could not unmarshal json data: bad ‘%s’ — expected type ‘string’ but is actually ‘%T’", key, valueInterface)
+		}
+
+		const expected = "CEL/1"
+
+		if actual := value; expected != actual {
+			return fmt.Errorf("could not unmarshal json data: bad ‘%s’ — expected value to be %q but actually was %q", key, expected, actual)
+		}
+	}
+
+	{
 		const key = "version"
 
 		valueInterface, found := dst[key]

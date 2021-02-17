@@ -17,6 +17,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 	}{
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -26,6 +27,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -35,6 +37,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"4",
 				"kind":"COMMAND",
 				"name":"SEND",
@@ -51,6 +54,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -60,6 +64,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -69,6 +74,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"5",
 				"kind":"LOG",
 				"name":"TOTALS",
@@ -85,6 +91,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
@@ -94,6 +101,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
@@ -103,6 +111,7 @@ func TestType_UnmarshalJSON(t *testing.T) {
 		},
 		{
 			JSON: `{
+				"magic":"CEL/1",
 				"version":"123",
 				"kind":"EVENT",
 				"name":"ACTIVATED",
