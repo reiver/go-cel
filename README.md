@@ -57,6 +57,16 @@ l := cel_message.Log(
 )
 ```
 
+You could then send this over some transport, such as a websocket, or message queue, IP over avian carriers, or whatever.
+
+You could also receive a CEL message with code similar to the following:
+```go
+var msg cel_mesage.Type
+
+err := json.Unmarshal(data, &msg)
+
+```
+
 ## Messages
 
 Collectively we call _commands_, _events_, and _logs_: **messages**.
@@ -160,3 +170,9 @@ The only valid values for `"kind"` are
 You will come up with the values of `"name"`.
 
 And the value of `"payload"` is dependent on what the value for `"name"` is.
+
+## See Also
+
+A similar library has also been created for JavaScript:
+
+* https://github.com/reiver/js-cel
