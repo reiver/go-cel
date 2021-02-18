@@ -175,4 +175,4 @@ And the value of `"payload"` is dependent on what the value for `"name"` is.
 
 A similar library has also been created for JavaScript:
 
-* https://github.com/reiver/js-cel
+* https://github.com/reiver/cel.js
