@@ -10,6 +10,53 @@ Online documentation, which includes examples, can be found at: http://godoc.org
 [![GoDoc](https://godoc.org/github.com/reiver/go-cel?status.svg)](https://godoc.org/github.com/reiver/go-cel)
 
 
+## Quick Example
+
+Here is a quick example:
+
+```go
+const apiVersion string = "1"
+
+c := cel_message.Command(
+		apiVersion,
+		"LOCK_DOOR",
+		map[string]interface{}{
+			"from":"john",
+			"doorid":"abc123",
+		},
+)
+
+e := cel_message.Event(
+		apiVersion,
+		"DOOR_LOCKED",
+		map[string]interface{}{
+			"from":"jane",
+			"doorid":"abc123",
+		},
+)
+
+l := cel_message.Log(
+		apiVersion,
+		"DOORS",
+		map[string]interface{}{
+			"doors": []map[string]interface{}{
+				map[string]interface{}{
+					"doorid":"abc123",
+					"is_locked":true,
+				},
+				map[string]interface{}{
+					"doorid":"def456",
+					"is_locked":false,
+				},
+				map[string]interface{}{
+					"doorid":"ghi789",
+					"is_locked":false,
+				},
+			},
+		},
+)
+```
+
 ## Messages
 
 Collectively we call _commands_, _events_, and _logs_: **messages**.
@@ -53,7 +100,7 @@ An example **command**:
 	"magic"   : "CEL/1",
 	"version" : "1",
 	"kind"    : "EVENT",
-	"name"    : "LOOK_DOOR",
+	"name"    : "LOCK_DOOR",
 	"payload" : {
 		"from":"john",
 		"doorid":"abc123",
@@ -86,12 +133,15 @@ An example **log**:
 		"doors": [
 			{
 				"doorid":"abc123",
+				"is_locked":true,
 			},
 			{
 				"doorid":"def456",
+				"is_locked":false,
 			},
 			{
 				"doorid":"ghi789",
+				"is_locked":false,
 			},
 		],
 	},
