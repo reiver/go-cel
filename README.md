@@ -45,6 +45,8 @@ cel_message.Type
 
 `cel_message.Type` supports marshaling and unmarshaling to and from JSON.
 
+The serialized JSON will look like:
+
 An example **command**:
 ```json
 {
@@ -95,3 +97,16 @@ An example **log**:
 	},
 }
 ```
+
+`"magic"` is (for now) always `"CEL/1"`.
+
+`"version"` can be set to whatever you want it to be. It is a means for your to (future-proof yourself and) version your API. (If you aren't sure what to set for this, just use (the string value) `"1"`.)
+
+The only valid values for `"kind"` are
+`"COMMAND"`,
+`"EVENT"`, and
+`"LOG"`.
+
+You will come up with the values of `"name"`.
+
+And the value of `"payload"` is dependent on what the value for `"name"` is.
